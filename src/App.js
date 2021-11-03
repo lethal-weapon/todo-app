@@ -28,7 +28,7 @@ export default function App() {
         <Route path="/help" exact={true} component={Help}/>
         <Redirect to="/"/>
       </Switch>
-      <StoreVisualizer/>
+      {/*<StoreVisualizer/>*/}
     </Router>
   );
 }

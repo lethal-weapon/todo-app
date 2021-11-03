@@ -1,9 +1,14 @@
 import React from 'react';
 import {useDispatch} from 'react-redux';
-import {toggleItemStatus, deleteItem} from '../store/actions/TodoAction';
+import {updateItem, deleteItem} from '../store/actions/TodoAction';
 
 export const Todo = ({todo}) => {
   const dispatch = useDispatch();
+
+  const toggleStatus = () => {
+    const updated = {...todo, done: !todo.done};
+    dispatch(updateItem(updated));
+  }
 
   return (
     <div className="row mt-3">
@@ -12,7 +17,7 @@ export const Todo = ({todo}) => {
         <div className="row border border-dark rounded-pill p-3">
           <div className="col-9">
             <span className={`fs-4 hvr-cursor-pointer ${todo.done ? 'text-decoration-line-through' : ''}`}
-                  onClick={() => dispatch(toggleItemStatus(todo))}
+                  onClick={toggleStatus}
             >
               {todo.text}
             </span>

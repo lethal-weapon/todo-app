@@ -13,15 +13,15 @@ export const loadData = () => async (dispatch) => {
   }
 }
 
-export const createNewItem = (text) => async (dispatch) => {
+export const createItem = (text) => async (dispatch) => {
   try {
     const unsaved = {
       text: text,
       done: false
     }
-    const {data} = await API.createNewItem(unsaved);
+    const {data} = await API.createItem(unsaved);
     dispatch({
-      type: ActionTypes.CREATE_NEW_ITEM,
+      type: ActionTypes.CREATE_ITEM,
       payload: data
     });
   } catch (error) {
@@ -29,12 +29,11 @@ export const createNewItem = (text) => async (dispatch) => {
   }
 }
 
-export const toggleItemStatus = (oldItem) => async (dispatch) => {
+export const updateItem = (updatedItem) => async (dispatch) => {
   try {
-    const updated = {...oldItem, done: !oldItem.done};
-    const {data} = await API.toggleItemStatus(updated);
+    const {data} = await API.updateItem(updatedItem);
     dispatch({
-      type: ActionTypes.TOGGLE_ITEM_STATUS,
+      type: ActionTypes.UPDATE_ITEM,
       payload: data
     });
   } catch (error) {

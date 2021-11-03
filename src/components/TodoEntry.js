@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useDispatch} from 'react-redux';
-import {createNewItem} from '../store/actions/TodoAction';
+import {createItem} from '../store/actions/TodoAction';
 
 export const TodoEntry = () => {
   const dispatch = useDispatch();
@@ -12,7 +12,7 @@ export const TodoEntry = () => {
 
   const handleCreateItem = () => {
     if (text.length > 0) {
-      dispatch(createNewItem(text));
+      dispatch(createItem(text));
     }
   }
 

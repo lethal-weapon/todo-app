@@ -8,12 +8,12 @@ export const TodoReducer = (storeData, action) => {
       return {...storeData, todos: action.payload};
     }
 
-    case ActionTypes.CREATE_NEW_ITEM: {
+    case ActionTypes.CREATE_ITEM: {
       const newTodos = [...storeData.todos, action.payload];
       return {...storeData, todos: newTodos};
     }
 
-    case ActionTypes.TOGGLE_ITEM_STATUS: {
+    case ActionTypes.UPDATE_ITEM: {
       const updatedItem = action.payload;
       const newTodos = storeData.todos.map(
         (todo) => todo.id !== updatedItem.id

@@ -22,8 +22,10 @@ export const Navigation = () => {
     <div className="m-5 fs-3 text-center">
       {
         links.map(link =>
-          <Link to={link.href}
-                className="mx-5 px-5"
+          <Link
+            key={link.href}
+            to={link.href}
+            className="mx-5 px-5"
           >
             {link.text}
           </Link>

@@ -12,7 +12,7 @@ export const Todo = ({todo}) => {
         <div className="row border border-dark rounded-pill p-3">
           <div className="col-9">
             <span className={`fs-4 hvr-cursor-pointer ${todo.done ? 'text-decoration-line-through' : ''}`}
-                  onClick={() => dispatch(toggleItemStatus(todo.id))}
+                  onClick={() => dispatch(toggleItemStatus(todo))}
             >
               {todo.text}
             </span>

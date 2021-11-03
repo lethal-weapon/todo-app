@@ -1,18 +1,24 @@
-import {ActionTypes} from '../Constants';
+import {ActionTypes} from '../Constant';
 import {INITIAL_DATA} from '../InitialData';
 
 export const TodoReducer = (storeData, action) => {
   switch (action.type) {
+
+    case ActionTypes.LOAD_DATA: {
+      return {...storeData, todos: action.payload};
+    }
+
     case ActionTypes.CREATE_NEW_ITEM: {
       const newTodos = [...storeData.todos, action.payload];
       return {...storeData, todos: newTodos};
     }
 
     case ActionTypes.TOGGLE_ITEM_STATUS: {
+      const updatedItem = action.payload;
       const newTodos = storeData.todos.map(
-        (todo) => todo.id !== action.payload
+        (todo) => todo.id !== updatedItem.id
           ? todo
-          : {...todo, done: !todo.done}
+          : updatedItem
       );
       return {...storeData, todos: newTodos};
     }

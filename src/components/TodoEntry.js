@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {useDispatch} from 'react-redux';
-import {v4 as uuidv4} from 'uuid';
 import {createNewItem} from '../store/actions/TodoAction';
 
 export const TodoEntry = () => {
@@ -13,12 +12,7 @@ export const TodoEntry = () => {
 
   const handleCreateItem = () => {
     if (text.length > 0) {
-      const newItem = {
-        id: uuidv4(),
-        text: text,
-        done: false
-      }
-      dispatch(createNewItem(newItem));
+      dispatch(createNewItem(text));
     }
   }
 

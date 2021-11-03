@@ -3,7 +3,7 @@ import {useSelector} from 'react-redux';
 
 export const Done = () => {
   const finishedItems = useSelector(
-    (state) => state.todos.filter(todo => todo.done)
+    (state) => (state.todos || []).filter(todo => todo.done)
   ) || [];
 
   return (
@@ -15,7 +15,8 @@ export const Done = () => {
           <ol>
             {
               finishedItems.map(item =>
-                <li className="pt-4 w-25 text-decoration-line-through">
+                <li key={item.id}
+                    className="pt-4 w-25 text-decoration-line-through">
                   {item.text}
                 </li>
               )

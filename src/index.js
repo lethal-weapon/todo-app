@@ -6,7 +6,9 @@ import thunk from 'redux-thunk';
 import {TodoReducer} from './store/reducers/TodoReducer';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'antd/dist/antd.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'animate.css/animate.min.css';
 import './index.css';
 
 const dataStore = createStore(

@@ -4,9 +4,13 @@ import {TodoEntry} from './TodoEntry';
 
 export const Business = () => {
   return (
-    <>
-      <Todos/>
-      <TodoEntry/>
-    </>
+    <div className="row m-5 p-5">
+      <div className="col-5">
+        <TodoEntry/>
+      </div>
+      <div className="col-7">
+        <Todos/>
+      </div>
+    </div>
   );
 }

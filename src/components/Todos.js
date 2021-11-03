@@ -8,12 +8,14 @@ export const Todos = () => {
   return (
     <>
       {
-        todos.map(item =>
-          <Todo
-            key={item.id}
-            todo={item}
-          />
-        )
+        todos
+          .sort((t1, t2) => t2.id - t1.id)
+          .map(item =>
+            <Todo
+              key={item.id}
+              todo={item}
+            />
+          )
       }
     </>
   );

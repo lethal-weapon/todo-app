@@ -19,13 +19,13 @@ export const Navigation = () => {
   ]
 
   return (
-    <div className="m-5 fs-3 text-center">
+    <div className="m-5 fs-2 text-center">
       {
         links.map(link =>
           <Link
             key={link.href}
             to={link.href}
-            className="mx-5 px-5"
+            className="mx-5 px-5 text-primary hvr-underline"
           >
             {link.text}
           </Link>

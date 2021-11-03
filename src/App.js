@@ -8,7 +8,6 @@ import {Done} from './components/Done';
 import {Help} from './components/Help';
 import {Business} from './components/Business';
 import {Navigation} from './components/Navigation';
-import {StoreVisualizer} from "./components/StoreVisualizer";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -28,7 +27,6 @@ export default function App() {
         <Route path="/help" exact={true} component={Help}/>
         <Redirect to="/"/>
       </Switch>
-      {/*<StoreVisualizer/>*/}
     </Router>
   );
 }

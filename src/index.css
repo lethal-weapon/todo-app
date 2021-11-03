@@ -12,7 +12,7 @@ code {
 }
 
 ::placeholder {
-  color:#222222;
+  color:#333333;
   font-style:italic;
 }
 
@@ -26,4 +26,8 @@ code {
 
 .hvr-cursor-pointer:hover {
   cursor:pointer;
+}
+
+.hvr-underline:hover {
+  text-decoration:underline;
 }

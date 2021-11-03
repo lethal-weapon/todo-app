@@ -8,7 +8,7 @@ export const Todos = () => {
   return (
     <>
       {
-        todos.map((item) =>
+        todos.map(item =>
           <Todo
             key={item.id}
             todo={item}

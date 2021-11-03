@@ -3,7 +3,7 @@ import {useDispatch} from 'react-redux';
 import {v4 as uuidv4} from 'uuid';
 import {createNewItem} from '../store/actions/TodoAction';
 
-export const NewItem = () => {
+export const TodoEntry = () => {
   const dispatch = useDispatch();
   const [text, setText] = useState('');
 
@@ -38,7 +38,7 @@ export const NewItem = () => {
             <button className="btn btn-outline-primary fs-4 mt-2"
                     onClick={handleCreateItem}
             >
-              Add
+              <i className="fa fa-plus"/>
             </button>
           </div>
         </div>

@@ -44,12 +44,10 @@ export const updateItem = (updatedItem) => async (dispatch) => {
 export const deleteItem = (id) => async (dispatch) => {
   try {
     const response = await API.deleteItem(id);
-    if (response.status === 200) {
-      dispatch({
-        type: ActionTypes.DELETE_ITEM,
-        payload: id
-      });
-    }
+    dispatch({
+      type: ActionTypes.DELETE_ITEM,
+      payload: id
+    });
   } catch (error) {
     console.log(error.message);
   }

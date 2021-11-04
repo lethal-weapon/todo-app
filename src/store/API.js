@@ -1,6 +1,7 @@
 import Axios from 'axios';
 
-const BASE_URL = 'https://6182269884c2020017d89cc2.mockapi.io/api/v1/todos';
+// const BASE_URL = 'https://6182269884c2020017d89cc2.mockapi.io/api/v1/todos';
+const BASE_URL = 'http://localhost:8080/todos';
 
 export const loadData = () =>
   Axios.get(`${BASE_URL}`);
